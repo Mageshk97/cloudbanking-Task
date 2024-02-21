@@ -1,0 +1,6 @@
+Application Variables (vars/app_vars.yml):
+nginx_port: 80
+tomcat_port: 8080
+war_file_path: /path/to/your/application.war
+Database Variables (vars/db_vars.yml):
+mysql_root_password: <YOUR_ROOT_PASSWORD>
