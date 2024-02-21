@@ -1,0 +1,17 @@
+Directory Structure:
+ansible/
+|-- inventory
+|-- playbook.yml
+|-- roles
+|   |-- nginx
+|   |   `-- tasks
+|   |       `-- main.yml
+|   |-- tomcat
+|   |   `-- tasks
+|   |       `-- main.yml
+|   `-- mysql
+|       `-- tasks
+|           `-- main.yml
+`-- vars
+    |-- app_vars.yml
+    `-- db_vars.yml
