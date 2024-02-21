@@ -1,0 +1,10 @@
+- name: Provision Application and Database VMs
+  hosts: all
+  become: true
+  vars_files:
+    - vars/app_vars.yml
+    - vars/db_vars.yml
+  roles:
+    - nginx
+    - tomcat
+    - mysql
