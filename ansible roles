@@ -16,3 +16,19 @@
   service:
     name: nginx
     state: started
+Tomcat Role (roles/tomcat/tasks/main.yml):
+
+- name: Install Tomcat
+  apt:
+    name: tomcat
+    state: present
+
+- name: Deploy Application War
+  copy:
+    src: "{{ war_file_path }}"
+    dest: /var/lib/tomcat/webapps/
+
+- name: Ensure Tomcat service is started
+  service:
+    name: tomcat
+    state: started
