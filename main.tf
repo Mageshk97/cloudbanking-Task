@@ -14,7 +14,8 @@ provider "aws" {
 
 resource "aws_instance" "application_vm" {
   ami           = "ami-02d0a1cbe2c3e5ae4"  
-  instance_type = "t3.micro"     
+  instance_type = "t3.micro"
+  user_data     = file("${path.module}/userdata_db.sh")
 
   tags = {
     Name = "Application VM"
@@ -38,4 +39,22 @@ resource "aws_db_instance" "my_database" {
   tags = {
     Name = "MyDatabase"
   }
+}
+resource "aws_instance" "db_instance" {
+  ami           = "ami-02d0a1cbe2c3e5ae4"  # Use a suitable AMI ID
+  instance_type = "t3.micro"
+  key_name      = Magesh
+  user_data     = file("${path.module}/userdata_db.sh")
+
+  tags = {
+    Name = "db-instance"
+  }
+}
+
+output "app_instance_ip" {
+  value = aws_instance.app_instance.public_ip
+}
+
+output "db_instance_ip" {
+  value = aws_instance.db_instance.public_ip
 }
