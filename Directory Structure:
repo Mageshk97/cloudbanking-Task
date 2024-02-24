@@ -1,0 +1,11 @@
+.
+|-- petclinic
+|   |-- src
+|   |   `-- ... (Spring Petclinic Source Code)
+|   |-- pom.xml
+|-- main.tf (Terraform Configuration)
+|-- variables.tf (Terraform Variables)
+|-- outputs.tf (Terraform Outputs)
+|-- userdata_app.sh (User Data Script for App VM)
+|-- userdata_db.sh (User Data Script for DB VM)
+|-- variables.tfvars (Terraform Variables Values)
